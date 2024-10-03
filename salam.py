@@ -1,7 +1,0 @@
-print ("salam")
-print("rustem gowymy yagdaylan name etyan")
-a = int(input("Enter san:"))
-print(a)
-print ("da guga da")
-b = int(input("suna san giriz rustem:"))
-print(b)
