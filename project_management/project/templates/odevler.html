@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödevler - Yas Alymlar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Menü</h2>
+            <ul>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#ogrenciler">Öğrenciler</a></li>
+                <li><a href="#odevler">Ödevler</a></li>
+                <li><a href="#istatistikler">İstatistikler</a></li>
+                <li><a href="#kalendar">Kalendar</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1>Ödevler</h1>
+            <button id="yeniOdevBtn">Yeni Ödev Ekle</button>
+            <section id="tumOdevler">
+                <h2>Tüm Ödevler</h2>
+                <ul id="odevListesi">
+                    <li>Ahmet Yılmaz - Matematik Ödevi - 30 Eylül - Durum: Tamamlandı</li>
+                    <li>Ayşe Demir - Fizik Projesi - 5 Ekim - Durum: Devam Ediyor</li>
+                    <li>Mehmet Can - Kimya Raporu - 10 Ekim - Durum: Bekliyor</li>
+                    <!-- Diğer ödevler buraya eklenecek -->
+                </ul>
+            </section>
+            <section id="odevEkle">
+                <h2>Yeni Ödev Ekle</h2>
+                <form id="yeniOdevForm">
+                    <label for="ogrenciIsmi">Öğrenci İsmi:</label>
+                    <input type="text" id="ogrenciIsmi" required>
+                    <label for="odevKonusu">Ödev Konusu:</label>
+                    <input type="text" id="odevKonusu" required>
+                    <label for="teslimTarihi">Teslim Tarihi:</label>
+                    <input type="date" id="teslimTarihi" required>
+                    <button type="submit">Ekle</button>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Yeni Ödev Ekle Modal (Opsiyonel) -->
+    <div id="yeniOdevModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Yeni Ödev Ekle</h2>
+            <form id="yeniOdevForm">
+                <label for="ogrenciIsmi">Öğrenci İsmi:</label>
+                <input type="text" id="ogrenciIsmi" required>
+                <label for="odevKonusu">Ödev Konusu:</label>
+                <input type="text" id="odevKonusu" required>
+                <label for="teslimTarihi">Teslim Tarihi:</label>
+                <input type="date" id="teslimTarihi" required>
+                <button type="submit">Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Yeni Ödev Ekle Modal açma ve kapama
+        const modal = document.getElementById("yeniOdevModal");
+        const btn = document.getElementById("yeniOdevBtn");
+        const span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Ödev ekleme işlemi
+        document.getElementById("yeniOdevForm").onsubmit = function(e) {
+            e.preventDefault();
+            const ogrenciIsmi = document.getElementById("ogrenciIsmi").value;
+            const odevKonusu = document.getElementById("odevKonusu").value;
+            const teslimTarihi = document.getElementById("teslimTarihi").value;
+
+            const odevListesi = document.getElementById("odevListesi");
+            const yeniOdev = document.createElement("li");
+            yeniOdev.textContent = `${ogrenciIsmi} - ${odevKonusu} - ${teslimTarihi} - Durum: Bekliyor`;
+            odevListesi.appendChild(yeniOdev);
+
+            modal.style.display = "none"; // Modalı kapat
+            document.getElementById("yeniOdevForm").reset(); // Formu sıfırla
+        };
+    </script>
+</body>
+</html>

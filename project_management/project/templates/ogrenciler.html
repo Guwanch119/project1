@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenciler - Yas Alymlar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Menü</h2>
+            <ul>
+                <li><a href="#hakkimizda">Hakkımızda</a></li>
+                <li><a href="#ogrenciler">Öğrenciler</a></li>
+                <li><a href="#odevler">Ödevler</a></li>
+                <li><a href="#istatistikler">İstatistikler</a></li>
+                <li><a href="#kalendar">Kalendar</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1>Öğrenciler</h1>
+            <button id="ekleOgrenciBtn">Yeni Öğrenci Ekle</button>
+            <section id="tumOgrenciler">
+                <h2>Tüm Öğrenciler</h2>
+                <ul id="ogrenciListesi">
+                    <li>
+                        <a href="profil.html">Ahmet Yılmaz</a>
+                        <button class="duzenleBtn">Düzenle</button>
+                        <button class="silBtn">Sil</button>
+                    </li>
+                    <li>
+                        <a href="profil.html">Ayşe Demir</a>
+                        <button class="duzenleBtn">Düzenle</button>
+                        <button class="silBtn">Sil</button>
+                    </li>
+                    <!-- Diğer öğrenciler buraya eklenecek -->
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Yeni Öğrenci Ekle Modal -->
+    <div id="yeniOgrenciModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Yeni Öğrenci Ekle</h2>
+            <form id="yeniOgrenciForm">
+                <label for="ogrenciIsmi">Öğrenci İsmi:</label>
+                <input type="text" id="ogrenciIsmi" required>
+                <label for="ogrenciEmail">E-posta:</label>
+                <input type="email" id="ogrenciEmail" required>
+                <button type="submit">Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Modal açma kapama
+        const modal = document.getElementById("yeniOgrenciModal");
+        const btn = document.getElementById("ekleOgrenciBtn");
+        const span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
