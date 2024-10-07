@@ -384,3 +384,39 @@ select {
     display: block;
     margin: 10px 0;
 }
+/* search */
+#search-form {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0; /* Formun üst ve altında biraz boşluk */
+}
+
+#search {
+    padding: 6px; /* Giriş alanının iç boşluğu */
+    border: 2px solid #007bff; /* Kenar rengi */
+    border-radius: 5px; /* Yuvarlak köşeler */
+    font-size: 14px; /* Yazı boyutu */
+    width: 150px; /* Genişlik */
+    transition: border-color 0.3s; /* Kenar renginin geçiş efekti */
+}
+
+#search:focus {
+    border-color: #0056b3; /* Fokusa geldiğinde kenar rengi değişimi */
+    outline: none; /* Varsayılan odak çerçevesini kaldır */
+}
+
+button {
+    padding: 6px 10px; /* Butonun iç boşluğu */
+    margin-left: 6px; /* Giriş alanı ile buton arasında boşluk */
+    border: none; /* Kenar yok */
+    border-radius: 5px; /* Yuvarlak köşeler */
+    background-color: #007bff; /* Buton rengi */
+    color: white; /* Yazı rengi */
+    font-size: 14px; /* Yazı boyutu */
+    cursor: pointer; /* Fare işareti değişimi */
+    transition: background-color 0.3s; /* Arka plan renginin geçiş efekti */
+}
+
+button:hover {
+    background-color: #0056b3; /* Fareyle üzerine gelince renk değişimi */
+}
