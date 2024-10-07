@@ -1,34 +1,12 @@
+{% extends "base/base.html" %}
+
 {% load static %}
+{% block content %}
 
 
 
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yas Alymlar</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
-</head>
-<body>
-    <div class="container">
-        <nav class="sidebar">
-            <h2>Menü</h2>
-            <ul>
-                <li><a href="hakkimizda.html">Hakkımızda</a></li>
-                <li><a href="ogrenciler.html">Öğrenciler</a></li>
-                <li><a href="odevler.html">Ödevler</a></li>
-                <li><a href="istatistikler.html">İstatistikler</a></li>
-                <li><a href="kalendar.html">Kalendar</a></li>
-                <li><a href="index.html">Ana Sayfa</a></li>
-            </ul>
-        </nav>
-        <main class="content">
-            
-            <form id="search-form" action="#" method="get">
-                <input type="text" id="search" name="search" placeholder="Ara..." aria-label="Arama" style="height: 30px; width: 300px;">
-                <button type="submit" style="height: 30px; width: 200px;">Ara</button>
-            </form>
+
+   
 
             <h1>Hoşgeldiniz, Öğrenciler!</h1>
             <section id="odevler">
@@ -59,3 +37,5 @@
     </div>
 </body>
 </html>
+
+{% endblock %}

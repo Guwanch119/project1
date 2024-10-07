@@ -1,24 +1,13 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımızda - Yas Alymlar</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <nav class="sidebar">
-            <h2>Menü</h2>
-            <ul>
-                <li><a href="#hakkimizda">Hakkımızda</a></li>
-                <li><a href="#ogrenciler">Öğrenciler</a></li>
-                <li><a href="#odevler">Ödevler</a></li>
-                <li><a href="#istatistikler">İstatistikler</a></li>
-                <li><a href="#kalendar">Kalendar</a></li>
-            </ul>
-        </nav>
-        <main class="content">
+{% extends "base/base.html" %}
+
+
+{% load static %}
+{% block content %}
+
+
+
+
+
             <h1>Kurum Hakkında</h1>
             <section id="kurum-bilgisi">
                 <h2>Kurum Bilgisi</h2>
@@ -45,3 +34,6 @@
     </div>
 </body>
 </html>
+
+
+{% endblock %}
